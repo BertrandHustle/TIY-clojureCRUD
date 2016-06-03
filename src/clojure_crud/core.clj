@@ -8,22 +8,22 @@
 (defonce server (atom nil))
 
 ;lets user enter search query
-(defn query []
-  (println "enter a search query")
-  (let [query (read-line)
-        file-text (pr-str query)]
-    (spit (str "search-history.edn") file-text)
-    (println query)))
+(defn add-history [search-query]
+  ;(println "enter a search query")
+  (let [file-text (pr-str search-query)]
+    (spit (str "search-history.edn") file-text :append true)))
+
+;deletes search history
+(defn delete-history [] (spit (str "search-history.edn") ""))
 
 ;webroot, displays search history
 (comp/defroutes root
-                (comp/GET "/" []
+                (comp/GET "/" [search-query]
                   (let [history (slurp "search-history.edn")
-                        ](hic/html[:html history]))))
-;search route
-(comp/defroutes search
-                (comp/GET "/search" []
-                  (query)))
+                        ](hic/html[:html history [:form [:input [:button "Delete history" [:action (delete-history)]] [:button "Search" [:action (add-history search-query)] [:type "submit"]]]]])))
+                (comp/GET "/test" [] (hic/html [:html [:body] [:form [:input [:button ]]]])))
+
+
 
 (defn -main []
   ;@ points to defonce binding
