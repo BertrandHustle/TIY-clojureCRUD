@@ -3,9 +3,12 @@
             [clojure.walk]
             [compojure.core :as comp]
             [ring.adapter.jetty :as ring]
+            [ring.util.response :as response]
+            [ring.middleware.params :as params]
             [hiccup.core :as hic]))
 
 (defonce server (atom nil))
+(defonce history (atom []))
 
 ;lets user enter search query
 (defn add-history [search-query]
@@ -18,15 +21,25 @@
 
 ;webroot, displays search history
 (comp/defroutes root
-                (comp/GET "/" [search-query]
+                (comp/GET "/" []
                   (let [history (slurp "search-history.edn")
-                        ](hic/html[:html history [:form [:input [:button "Delete history" [:action (delete-history)]] [:button "Search" [:action (add-history search-query)] [:type "submit"]]]]])))
-                (comp/GET "/test" [] (hic/html [:html [:body] [:form [:input [:button ]]]])))
+                        ](hic/html
+                          [:html history [:form {:action "/add" :method "post"}
+                          [:input {:type "text" :name "search-query" :placeholder "search"}]
+                          [:button {:type "submit"} "Search" ]
+                          [:button "Delete history" [:action (delete-history)]]]])))
 
+                (comp/POST "/add" request
+                  (let [params (get request :params)
+                        search-query (get params "search-query")]
+                    (swap! history conj search-query)
+                    (add-history search-query)
+                    (response/redirect "/"))))
 
 
 (defn -main []
   ;@ points to defonce binding
   (when @server
     (.stop @server))
-  (reset! server (ring/run-jetty root {:port 3000 :join? false})))
+  (let[root(params/wrap-params root)]
+    (reset! server (ring/run-jetty root {:port 3000 :join? false}))))
