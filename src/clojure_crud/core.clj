@@ -13,8 +13,10 @@
 ;lets user enter search query
 (defn add-history [search-query]
   ;(println "enter a search query")
-  (let [file-text (pr-str search-query)]
-    (spit (str "search-history.edn") file-text :append true)))
+  (let [file-text (pr-str @history)]
+    ;vector error here
+    (swap! history conj search-query)
+    (spit "search-history.edn" file-text)))
 
 ;deletes search history
 (defn delete-history [] (spit (str "search-history.edn") ""))
@@ -26,13 +28,12 @@
                         ](hic/html
                           [:html history [:form {:action "/add" :method "post"}
                           [:input {:type "text" :name "search-query" :placeholder "search"}]
-                          [:button {:type "submit"} "Search" ]
-                          [:button "Delete history" [:action (delete-history)]]]])))
+                          [:button {:type "submit"} "Search" ]]
+                           [:form [:button "Delete history" [:action (delete-history)]]]])))
 
                 (comp/POST "/add" request
                   (let [params (get request :params)
                         search-query (get params "search-query")]
-                    (swap! history conj search-query)
                     (add-history search-query)
                     (response/redirect "/"))))
 
