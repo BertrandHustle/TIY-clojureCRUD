@@ -5,7 +5,9 @@
             [ring.adapter.jetty :as ring]
             [ring.util.response :as response]
             [ring.middleware.params :as params]
-            [hiccup.core :as hic]))
+            [ring.middleware.session :as session]
+            [hiccup.core :as hic]
+            [clojure.java.io :as io]))
 
 (defonce server (atom nil))
 (defonce history (atom []))
@@ -39,6 +41,7 @@
 
                 (comp/GET "/delete" []
                   (spit "search-history.edn" "")
+                  (reset! history [])
                   (response/redirect "/")))
 
 
