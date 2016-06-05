@@ -27,10 +27,15 @@
 (comp/defroutes root
                 (comp/GET "/" []
                     (hic/html
-                          [:html [:form {:action "/add" :method "post"}
+                          [:html
+
+                          [:form {:action "/add" :method "post"}
                           [:input {:type "text" :name "search-query" :placeholder "search"}]
                           [:button {:type "submit"} "Search" ]
-                          [:ol (map (fn [searches] [:li searches]) @history)]]]))
+                          [:ol (map (fn [searches] [:li searches]) @history)]]
+
+                           [:form {:action "/delete" :method "get"}[:button {:type "submit"} "Delete History?"]]
+                           ]))
 
                 (comp/POST "/add" request
                   (let [param (get request :params)

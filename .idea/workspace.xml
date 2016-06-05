@@ -26,8 +26,8 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clojure_crud/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            <state relative-caret-position="143">
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -167,7 +167,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
-  <component name="ReplState" timestamp="1465087203249">{:repl-history {:ide [], :local [&quot;(doc read-line)&quot; &quot;Bets&quot; &quot;\&quot;title\&quot;&quot; &quot;Title&quot; &quot;Genre&quot; &quot;(print title)&quot; &quot;(- 1 1)&quot; &quot;jlkjljkj&quot; &quot;jkljlk                                                      ;k&quot; &quot;k14k&quot; &quot;32k4&quot; &quot;1k3&quot; &quot;k41&quot; &quot;(324k23k424242kk jjjjjjjjjjjjjj line-seq)&quot; &quot;test&quot; &quot;title&quot; &quot;Rabbit size&quot; &quot;end&quot; &quot;(+ 1 1)&quot; &quot;queryy&quot; &quot;kdask&quot; &quot;dka&quot; &quot;kd&quot; &quot;ka&quot; &quot;k&quot; &quot;ak&quot; &quot;queryu&quot; &quot;(gen-history)&quot; &quot;(add-history)&quot; &quot;@search-query&quot; &quot;(spit \&quot;search-history.edn\&quot; @history)&quot; &quot;history&quot; &quot;(pr-str @history)&quot; &quot;(@history conj \&quot;banana\&quot;)&quot; &quot;(pr-str history conj \&quot;banana\&quot;)&quot; &quot;file-text&quot; &quot;(swap! (pr-str @history) conj \&quot;banana\&quot;)&quot; &quot;(delete-history)&quot; &quot;(add-history \&quot;banana\&quot;)&quot; &quot;(add-history banana)&quot; &quot;(display-history)&quot; &quot;@history&quot; &quot;(add-history \&quot;test\&quot;)&quot; &quot;(spit \&quot;search-history.edn\&quot; (pr-str @history))&quot; &quot;(spit \&quot;search-history.edn\&quot; \&quot; \&quot;)&quot; &quot;(-main)&quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1465087375913">{:repl-history {:ide [], :local [&quot;(doc read-line)&quot; &quot;Bets&quot; &quot;\&quot;title\&quot;&quot; &quot;Title&quot; &quot;Genre&quot; &quot;(print title)&quot; &quot;(- 1 1)&quot; &quot;jlkjljkj&quot; &quot;jkljlk                                                      ;k&quot; &quot;k14k&quot; &quot;32k4&quot; &quot;1k3&quot; &quot;k41&quot; &quot;(324k23k424242kk jjjjjjjjjjjjjj line-seq)&quot; &quot;test&quot; &quot;title&quot; &quot;Rabbit size&quot; &quot;end&quot; &quot;(+ 1 1)&quot; &quot;queryy&quot; &quot;kdask&quot; &quot;dka&quot; &quot;kd&quot; &quot;ka&quot; &quot;k&quot; &quot;ak&quot; &quot;queryu&quot; &quot;(gen-history)&quot; &quot;(add-history)&quot; &quot;@search-query&quot; &quot;(spit \&quot;search-history.edn\&quot; @history)&quot; &quot;history&quot; &quot;(pr-str @history)&quot; &quot;(@history conj \&quot;banana\&quot;)&quot; &quot;(pr-str history conj \&quot;banana\&quot;)&quot; &quot;file-text&quot; &quot;(swap! (pr-str @history) conj \&quot;banana\&quot;)&quot; &quot;(delete-history)&quot; &quot;(add-history \&quot;banana\&quot;)&quot; &quot;(add-history banana)&quot; &quot;(display-history)&quot; &quot;@history&quot; &quot;(add-history \&quot;test\&quot;)&quot; &quot;(spit \&quot;search-history.edn\&quot; (pr-str @history))&quot; &quot;(spit \&quot;search-history.edn\&quot; \&quot; \&quot;)&quot; &quot;(-main)&quot;], :remote []}}</component>
   <component name="RunManager" selected="Clojure REPL.REPL for clojure-crud">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -629,12 +629,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464961042644</updated>
-      <workItem from="1464961045741" duration="24680000" />
+      <workItem from="1464961045741" duration="24852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24680000" />
+    <option name="totallyTimeSpent" value="24852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="23" width="1206" height="709" extended-state="0" />
@@ -701,8 +701,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clojure_crud/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        <state relative-caret-position="143">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding />
         </state>
       </provider>
